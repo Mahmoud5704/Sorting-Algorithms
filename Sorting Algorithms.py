@@ -199,11 +199,9 @@ for size in sizes:
     print(f"Merge:     {time.time() - start:.4f}s")
 
     start = time.time()
-    quickSort(arr_quick, 0, len(arr_quick) - 1)  # fix 1
+    quickSort(arr_quick, 0, len(arr_quick) - 1)  
     print(f"Quick:     {time.time() - start:.4f}s")
 
     start = time.time()
-    heap_sort(arr_heap)                           # fix 2
+    heap_sort(arr_heap)
     print(f"Heap:      {time.time() - start:.4f}s")
-
-    print()
