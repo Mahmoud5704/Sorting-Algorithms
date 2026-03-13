@@ -124,6 +124,20 @@ def hyprid_merge(array,first,last,limit):
 def merge_sort(array,first,last):
     merge_rec(array,first,last,-1)
 
+    def kth_smallest(arr, k):
+        low = 0
+        high = len(arr) - 1
+
+        while True:
+            pos = partition(arr, low, high)
+
+            if pos == k - 1:
+                return arr[pos]
+            elif pos > k - 1:
+                high = pos - 1
+            else:
+                low = pos + 1
+
 
 
 def main():
