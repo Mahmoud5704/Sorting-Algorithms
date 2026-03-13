@@ -46,7 +46,6 @@ def insertsort(arr):
             j -= 1
         arr[j + 1] = key
 
-
 def split_merge(array,first,mid,last):
     #calculate size of each side and add 1 only to the array will take mid  
     left_size=mid-first+1
@@ -68,32 +67,30 @@ def split_merge(array,first,mid,last):
     while(i<left_size): array[k]=left_array[i];i=i+1;k=k+1
     while(j<right_size):array[k]=right_array[j];j=j+1;k=k+1
 
-def merge_rec(array,first,last):
+def merge_rec(array,first,last,limit):
     if(first<last):
-        mid=(last+first)//2  # plus not minus bec first_index not always equal 0 for ex. if we send 2,5 mid is 3 but is we use minus it will be 1 !!!
-        merge_rec(array,first,mid)
-        merge_rec(array,mid+1,last)
-        split_merge(array,first,mid,last)
-
-def hyprid_merge(array,first,last,limit):
-    if(first<last):
-        if(last-first+1<=limit):
+        if(last-first+1<=limit and limit !=-1):
             copy=array[first:last+1]
             selectsort(copy)
             array[first:last+1]=copy
         else:
             mid=(last+first)//2  # plus not minus bec first_index not always equal 0 for ex. if we send 2,5 mid is 3 but is we use minus it will be 1 !!!
-            hyprid_merge(array,first,mid,limit)
-            hyprid_merge(array,mid+1,last,limit)
+            merge_rec(array,first,mid,limit)
+            merge_rec(array,mid+1,last,limit)
             split_merge(array,first,mid,last)
 
+def hyprid_merge(array,first,last,limit):
+    merge_rec(array,first,last,limit)
+
+def merge_sort(array,first,last):
+    merge_rec(array,first,last,-1)
 
 
 
 def main():
     arr=[9,8,7,6,5,4,3,2,1]
-    #merge_rec(arr,0,4)
-    hyprid_merge(arr,0,8,3)
+    #merge_sort(arr,0,8)
+    #hyprid_merge(arr,0,8,3)
     #selectsort(arr)
     print(arr)
 main()
