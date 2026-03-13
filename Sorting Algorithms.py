@@ -92,7 +92,7 @@ def main():
     #merge_sort(arr,0,8)
     #hyprid_merge(arr,0,8,3)
     #selectsort(arr)
-    print(arr)
+
 main()
 
 
