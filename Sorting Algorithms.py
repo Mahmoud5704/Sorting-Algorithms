@@ -2,6 +2,21 @@ import time
 import random
 
 
+def kth_smallest(arr, k):
+    low = 0
+    high = len(arr) - 1
+
+    while True:
+        pos = partition(arr, low, high)
+
+        if pos == k - 1:
+            return arr[pos]
+        elif pos > k - 1:
+            high = pos - 1
+        else:
+            low = pos + 1
+
+
 def partition(arr, low, high):
     # choose the pivot
     pivot = arr[high]
