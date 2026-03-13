@@ -161,64 +161,49 @@ def main():
     #print(arr[1:])
     #print(arr)
 
-main()
 
 
 
 
 
-"""
+
+
 sizes = [10000,25000,50000,75000,100000]
+
+sizes = [10000, 25000, 50000, 75000, 100000]
 
 for size in sizes:
     print("testing for size: ", size)
-    #generate random array of the given size
-    #make copies of it for each sorting algorithm to ensure that they all sort the same data.
     original = [random.randint(-size, size) for _ in range(size)]
-    arr_bubble=original.copy()
-    arr_select=original.copy()
-    arr_insert=original.copy()
-    arr_merge=original.copy()
-    arr_quick=original.copy()
-    arr_heap=original.copy()
+    arr_bubble = original.copy()
+    arr_select = original.copy()
+    arr_insert = original.copy()
+    arr_merge  = original.copy()
+    arr_quick  = original.copy()
+    arr_heap   = original.copy()
 
-    # measure the time taken by each sorting algorithm 
     start = time.time()
     bubblesort(arr_bubble)
-    end = time.time()
-    t=end - start
-    print(f"runtime of the bubble program is: {t} seconds")
+    print(f"Bubble:    {time.time() - start:.4f}s")
 
     start = time.time()
     selectsort(arr_select)
-    end = time.time()
-    t=end - start
-    print(f"runtime of the selection program is: {t} seconds")
-    
+    print(f"Selection: {time.time() - start:.4f}s")
+
     start = time.time()
     insertsort(arr_insert)
-    end = time.time()
-    t = end - start
-    print(f"runtime of the insertion program  is: {t} seconds")
+    print(f"Insertion: {time.time() - start:.4f}s")
 
     start = time.time()
     merge_sort(arr_merge)
-    end = time.time()
-    t = end - start
-    print(f"runtime of the MEGRE SORT  is: {t} seconds")
+    print(f"Merge:     {time.time() - start:.4f}s")
 
     start = time.time()
-    quickSort(arr_quick,0,len(quickSort)-1)
-    end = time.time()
-    t = end - start
-    print(f"runtime of the QUICK SORT  is: {t} seconds")
+    quickSort(arr_quick, 0, len(arr_quick) - 1)  # fix 1
+    print(f"Quick:     {time.time() - start:.4f}s")
 
     start = time.time()
-    heapSort(arr_heap)
-    end = time.time()
-    t = end - start
-    print(f"runtime of the HEAP SORT  is: {t} seconds")
+    heap_sort(arr_heap)                           # fix 2
+    print(f"Heap:      {time.time() - start:.4f}s")
 
-  
-
-"""
+    print()
