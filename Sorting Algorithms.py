@@ -201,22 +201,23 @@ for size in sizes:
     print(f"runtime of the insertion program  is: {t} seconds")
 
     start = time.time()
-    merge_sort(arr_merge,0,len(merge_sort)-1)
+    merge_sort(arr_merge)
     end = time.time()
     t = end - start
-    print(f"runtime of the insertion program  is: {t} seconds")
+    print(f"runtime of the MEGRE SORT  is: {t} seconds")
 
     start = time.time()
     quickSort(arr_quick,0,len(quickSort)-1)
     end = time.time()
     t = end - start
-    print(f"runtime of the insertion program  is: {t} seconds")
+    print(f"runtime of the QUICK SORT  is: {t} seconds")
 
     start = time.time()
-    heapSort(arr_quick)
+    heapSort(arr_heap)
     end = time.time()
     t = end - start
-    print(f"runtime of the insertion program  is: {t} seconds")
+    print(f"runtime of the HEAP SORT  is: {t} seconds")
 
   
+
 """
